@@ -1,0 +1,17 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.navlink{
+    margin-left: 20px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.navlink :hover{
+    border-bottom: royalblue;
+    background-size: 2px;
+}
+.mr-sm-2{
+   margin-left: 20rem;
+}

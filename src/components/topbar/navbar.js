@@ -1,6 +1,7 @@
 import React, { useState, useEffect}from 'react'
 import * as  Reactbootstrap from 'react-bootstrap';
-import  {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../cssfolder/nav.css'
 const Navbar = () => {
   const [data, setMydata] = useState([]);
   const [query,  setMyquery] = useState([''])
@@ -11,8 +12,7 @@ const Navbar = () => {
       }) 
   }, []);
   console.log(data)
-  const filtering = (phone) => {
-    
+  const filtering = (phone) => { 
     return   phone.filter(phonumber => phonumber.phone.indexOf(query) > -1);
   }
   const search = () => {
@@ -34,15 +34,15 @@ const Navbar = () => {
       <>
          <div className='row'>
           <div className='col-12'>
-             <Reactbootstrap.Navbar bg="dark" variant="dark">
+    <Reactbootstrap.Navbar bg="dark" variant="dark">
     <Reactbootstrap.Navbar.Brand href="#home">Holsoft</Reactbootstrap.Navbar.Brand>
     <Reactbootstrap.Nav className="mr-auto">
-      <NavLink  to='/'>Home</NavLink>
-      <NavLink  to= '../loginform'>Login</NavLink>
-      <NavLink  to='../postform'>Recording</NavLink>
+      <NavLink className='navlink' to='/search'>Home</NavLink>
+      <NavLink className='navlink'  to= '/loginform'>Login</NavLink>
+      <NavLink className='navlink' to='/postform'>Recording</NavLink>
     </Reactbootstrap.Nav>
     <Reactbootstrap.FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={event=> setMyquery(event.target.value )}/>
-     <Reactbootstrap.Button value={query} onClick={ search} variant="outline-info">Search</Reactbootstrap.Button>
+     <Reactbootstrap.Button className='btn btn-warning' value={query} onClick={ search} variant="outline-info">Search</Reactbootstrap.Button>
     
   </Reactbootstrap.Navbar>
            </div>

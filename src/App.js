@@ -4,13 +4,17 @@ import Navbar from './components/topbar/navbar'
 import { BrowserRouter as Br, Route as R, Switch as S } from 'react-router-dom'
 import Post from './components/postform'
 import Login from './components/loginform';
+import Table from './components/searching/search'
 function App() {
   return (
     <div className="App">
+
       <Br>
-         <Navbar />
+        <Navbar />
+       
         <S>
           <R path='/' exact />
+          <R path='/search' exact component={Table} />
           <R exact path='/postform'  component={Post}/>
         <R exact path='/loginform'  component={Login}/>
         </S>
